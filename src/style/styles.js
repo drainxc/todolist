@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
     ${reset};
     body {
         margin: 0px;
-        background: linear-gradient(to bottom right, #9D65CA, #255993) fixed;
+        background: linear-gradient(to bottom right, #F17FF7, #5BB0F9) fixed;
         margin: 0px;
         display: flex;
         justify-content: center;
