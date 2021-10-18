@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0px;
         display: flex;
         justify-content: center;
+        padding: 5%;
     }
 `;
 

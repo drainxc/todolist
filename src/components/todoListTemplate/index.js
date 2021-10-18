@@ -1,9 +1,12 @@
 import React from "react";
+import * as S from "./styles"
 
 export default function TodoListTemplate() {
   return (
     <>
-      <div>asdf</div>
+      <S.MainDiv>
+        
+      </S.MainDiv>
     </>
   );
 }
