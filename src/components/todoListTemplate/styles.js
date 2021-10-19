@@ -8,4 +8,7 @@ export const MainDiv = styled.div`
   flex-direction: column;
   border-radius: 6px;
   box-shadow: 0 0 4px #ffffff, 0 0 7px #ffffff, 0 0 20px #e8b4ff;
+  .list {
+    overflow-y: scroll;
+  }
 `;
