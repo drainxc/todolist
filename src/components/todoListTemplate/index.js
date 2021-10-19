@@ -7,7 +7,6 @@ export default function TodoListTemplate() {
     <>
       <S.MainDiv>
         <Header/>
-        <hr />
       </S.MainDiv>
     </>
   );
