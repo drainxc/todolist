@@ -6,7 +6,6 @@ export default function Container() {
   return (
     <>
       <TodoListTemplate />
-      <TodoListItem />
     </>
   );
 }
