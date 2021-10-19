@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../todoListHeader";
+import TodoListItem from "../todoListItem";
 import * as S from "./styles";
 
 export default function TodoListTemplate() {
@@ -7,6 +8,7 @@ export default function TodoListTemplate() {
     <>
       <S.MainDiv>
         <Header/>
+        <TodoListItem/>
       </S.MainDiv>
     </>
   );
