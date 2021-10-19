@@ -11,18 +11,28 @@ export const MainDiv = styled.div`
   header {
     width: 100%;
     padding: 20px;
-
     .day {
       color: gray;
     }
 
-    .title {
+    .top {
       margin-top: 5px;
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       width: 100%;
-      font-size: 30px;
-      font-weight: 1000;
+      span {
+        font-size: 30px;
+        font-weight: 1000;
+      }
+      button {
+        border: 0px;
+        background-color: white;
+        img {
+          margin-top: 7px;
+          width: 20px;
+          height: 20px;
+        }
+      }
     }
   }
 
