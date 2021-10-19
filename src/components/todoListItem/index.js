@@ -1,11 +1,14 @@
 import React from "react";
-import * as S from "./styles"
+import * as S from "./styles";
 
 export default function TodoListItem() {
-    return (
-        <S.MainDiv>
-            <span>asdfasdfasdf</span>
-            <input type="checkbox"/>
-        </S.MainDiv>
-    )
+  return (
+    <S.List>
+      <span>
+        <span className="bullet">•</span>
+        <span className="contents">ㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴㅇㄹㅁㄴ</span>
+      </span>
+      <input type="checkbox" />
+    </S.List>
+  );
 }
