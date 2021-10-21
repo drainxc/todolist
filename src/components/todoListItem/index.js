@@ -8,7 +8,7 @@ export default function TodoListItem({ contents, checked }) {
         <span className="bullet">•</span>
         <span className="contents">{contents}</span>
       </span>
-      <input type="checkbox" checked={checked}/>
+      <input type="checkbox" defaultChecked={checked}/>
     </S.List>
   );
 }
