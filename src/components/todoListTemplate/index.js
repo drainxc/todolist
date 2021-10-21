@@ -2,15 +2,35 @@ import React, { useState, useRef } from "react";
 import Header from "../todoListHeader";
 import TodoListItem from "../todoListItem";
 import * as S from "./styles";
-import { data } from "../../lib/export/data";
 
 export default function TodoListTemplate() {
+  const [text, setText] = useState("");
+  const [datum, setDatum] = useState([]);
+
+  function textOnkeyup(e) {
+    setText(e.target.value);
+  }
+
+  const nextId = useRef(1);
+
+  function onCreate() {
+    const data = {
+      id: nextId.current,
+      contents: text,
+      checked: false,
+    }
+    console.log(data)
+    setDatum([...datum, data]);
+    setText('');
+    nextId.current += 1;
+  }
+
   return (
     <>
       <S.MainDiv>
         <Header />
         <div className="list">
-          {data.map((item) => (
+          {datum.map((item) => (
             <TodoListItem
               contents={item.contents}
               checked={item.checked}
@@ -20,8 +40,10 @@ export default function TodoListTemplate() {
         </div>
       </S.MainDiv>
       <S.AddButton>
-        <input placeholder="할 일을 입력하세요." />
-        <button className="itemAdd">+</button>
+        <input onChange={textOnkeyup} placeholder="할 일을 입력하세요." />
+        <button className="itemAdd" onClick={onCreate}>
+          +
+        </button>
       </S.AddButton>
     </>
   );
