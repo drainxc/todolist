@@ -12,3 +12,20 @@ export const MainDiv = styled.div`
     overflow-y: scroll;
   }
 `;
+
+export const AddButton = styled.div`
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  & .itemAdd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    font-weight: 300;
+    border-radius: 24px;
+    background: white;
+  }
+`;
