@@ -14,15 +14,17 @@ export default function TodoListTemplate() {
   const nextId = useRef(1);
 
   function onCreate() {
-    const data = {
-      id: nextId.current,
-      contents: text,
-      checked: false,
-    };
-    console.log(data);
-    setDatum([...datum, data]);
-    setText("");
-    nextId.current += 1;
+    if (text != "") {
+      const data = {
+        id: nextId.current,
+        contents: text,
+        checked: false,
+      };
+      console.log(data);
+      setDatum([...datum, data]);
+      setText("");
+      nextId.current += 1;
+    }
   }
 
   return (
@@ -40,7 +42,11 @@ export default function TodoListTemplate() {
         </div>
       </S.MainDiv>
       <S.AddButton>
-        <input value={text} onChange={textOnkeyup} placeholder="할 일을 입력하세요." />
+        <input
+          value={text}
+          onChange={textOnkeyup}
+          placeholder="할 일을 입력하세요."
+        />
         <button className="itemAdd" onClick={onCreate}>
           +
         </button>
