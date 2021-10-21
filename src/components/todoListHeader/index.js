@@ -10,7 +10,7 @@ export default function Header() {
         <span className="top">
           <span>To-Do list</span>
           <button>
-            <img src={search} />
+            <img src={search} alt=""/>
           </button>
         </span>
       </S.HeaderDiv>

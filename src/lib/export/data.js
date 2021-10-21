@@ -46,7 +46,7 @@ export const data = [
   },
   {
     contents: "ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㅇㄴㄻㄴㅇㄻㄴㅇㄹㅇㄴㄻㄴㅇㄻㅇㄴㄹ",
-    checked: false,
+    checked: true,
     id: 10,
   },
   {
@@ -62,21 +62,21 @@ export const data = [
   {
     contents: "ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㅇㄴㄻㄴㅇㄻㄴㅇㄹㅇㄴㄻㄴㅇㄻㅇㄴㄹ",
     checked: false,
-    id: 9,
+    id: 13,
   },
   {
     contents: "ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㅇㄴㄻㄴㅇㄻㄴㅇㄹㅇㄴㄻㄴㅇㄻㅇㄴㄹ",
     checked: false,
-    id: 10,
+    id: 14,
   },
   {
     contents: "ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㅇㄴㄻㄴㅇㄻㄴㅇㄹㅇㄴㄻㄴㅇㄻㅇㄴㄹ",
     checked: false,
-    id: 11,
+    id: 15,
   },
   {
     contents: "ㅁㄴㅇㄻㄴㅇㄻㄴㅇㄻㄴㅇㄻㅇㄴㄻㄴㅇㄻㄴㅇㄹㅇㄴㄻㄴㅇㄻㅇㄴㄹ",
     checked: false,
-    id: 12,
+    id: 16,
   },
 ];
