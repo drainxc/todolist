@@ -18,10 +18,10 @@ export default function TodoListTemplate() {
       id: nextId.current,
       contents: text,
       checked: false,
-    }
-    console.log(data)
+    };
+    console.log(data);
     setDatum([...datum, data]);
-    setText('');
+    setText("");
     nextId.current += 1;
   }
 
@@ -40,7 +40,7 @@ export default function TodoListTemplate() {
         </div>
       </S.MainDiv>
       <S.AddButton>
-        <input onChange={textOnkeyup} placeholder="할 일을 입력하세요." />
+        <input value={text} onChange={textOnkeyup} placeholder="할 일을 입력하세요." />
         <button className="itemAdd" onClick={onCreate}>
           +
         </button>
