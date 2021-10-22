@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 export const List = styled.div`
-  padding: 5%;
+  padding: 5% 0 5% 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
   .bullet {
     font-size: 20px;
     margin-right: 10px;
@@ -22,5 +21,9 @@ export const List = styled.div`
   input[type="checkbox"] {
     width: 20px;
     height: 20px;
+  }
+  & img {
+    width: 15px;
+    height: 15px;
   }
 `;

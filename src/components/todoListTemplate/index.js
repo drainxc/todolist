@@ -2,6 +2,8 @@ import React, { useState, useRef } from "react";
 import Header from "../todoListHeader";
 import TodoListItem from "../todoListItem";
 import * as S from "./styles";
+import fixImg from "../../asset/pen.png";
+import binImg from "../../asset/bin.png";
 
 export default function TodoListTemplate() {
   const [text, setText] = useState("");
@@ -14,7 +16,7 @@ export default function TodoListTemplate() {
   const nextId = useRef(1);
 
   function onCreate() {
-    if (text != "") {
+    if (text !== "") {
       const data = {
         id: nextId.current,
         contents: text,
@@ -27,17 +29,30 @@ export default function TodoListTemplate() {
     }
   }
 
+  function onDelete() {}
+
   return (
     <>
       <S.MainDiv>
         <Header />
         <div className="list">
           {datum.map((item) => (
-            <TodoListItem
-              contents={item.contents}
-              checked={item.checked}
-              key={item.id}
-            />
+            <>
+              <span className='item'>
+                <TodoListItem
+                  contents={item.contents}
+                  checked={item.checked}
+                  key={item.id}
+                />
+                <img className="fix" src={fixImg} alt="" />
+                <img
+                  onClick="onDelete"
+                  className="delete"
+                  src={binImg}
+                  alt=""
+                />
+              </span>
+            </>
           ))}
         </div>
       </S.MainDiv>

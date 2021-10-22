@@ -11,6 +11,18 @@ export const MainDiv = styled.div`
   .list {
     overflow-y: scroll;
   }
+
+  .item {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  & img {
+    display: flex;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+  }
 `;
 
 export const AddButton = styled.div`
