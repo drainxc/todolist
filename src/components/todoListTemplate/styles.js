@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const MainDiv = styled.div`
   background-color: white;
@@ -25,7 +25,16 @@ export const MainDiv = styled.div`
   }
 `;
 
-export const AddButton = styled.div`
+const rotation = keyframes`
+  0%{
+    transform: rotate(0deg)
+  }
+  100%{
+    transform: rotate(315deg)
+  }
+`;
+
+export const Add = styled.div`
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -39,5 +48,6 @@ export const AddButton = styled.div`
     font-weight: 300;
     border-radius: 24px;
     background: white;
+    animation: ${rotation} 2s;
   }
 `;

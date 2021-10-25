@@ -14,6 +14,7 @@ export default function TodoListTemplate() {
   }
 
   const nextId = useRef(1);
+  const deleteBtn = useRef();
 
   function onCreate() {
     if (text !== "") {
@@ -29,7 +30,8 @@ export default function TodoListTemplate() {
     }
   }
 
-  function onDelete() {}
+  function onDelete() {
+  }
 
   return (
     <>
@@ -38,7 +40,7 @@ export default function TodoListTemplate() {
         <div className="list">
           {datum.map((item) => (
             <>
-              <span className='item'>
+              <span className="item">
                 <TodoListItem
                   contents={item.contents}
                   checked={item.checked}
@@ -46,17 +48,18 @@ export default function TodoListTemplate() {
                 />
                 <img className="fix" src={fixImg} alt="" />
                 <img
-                  onClick="onDelete"
+                  onClick={onDelete}
                   className="delete"
                   src={binImg}
                   alt=""
+                  ref={deleteBtn}
                 />
               </span>
             </>
           ))}
         </div>
       </S.MainDiv>
-      <S.AddButton>
+      <S.Add>
         <input
           value={text}
           onChange={textOnkeyup}
@@ -65,7 +68,7 @@ export default function TodoListTemplate() {
         <button className="itemAdd" onClick={onCreate}>
           +
         </button>
-      </S.AddButton>
+      </S.Add>
     </>
   );
 }
