@@ -5,40 +5,44 @@ import * as S from "./styles";
 import fixImg from "../../asset/pen.png";
 import binImg from "../../asset/bin.png";
 
-const Addbtn = () => {
-  const [rotate, setRotate] = useState(false);
-
-  const handleClick = () => setRotate((prevState) => (!prevState ));
-  return (
-    <S.IconButtonWrapper rotate={rotate} onClick={handleClick}>
-      <span>+</span>
-    </S.IconButtonWrapper>
-  );
-};
-
 export default function TodoListTemplate() {
   const [text, setText] = useState("");
   const [datum, setDatum] = useState([]);
+
+  const Addbtn = () => {
+    const [rotate, setRotate] = useState(false);
+  
+    function handleClick() {
+      setRotate((prevState) => !prevState);
+      console.log("asdf");
+      if (text !== "") {
+        const data = {
+          id: nextId.current,
+          contents: text,
+          checked: false,
+        };
+        console.log(data);
+        setDatum([...datum, data]);
+        setText("");
+        nextId.current += 1;
+      }
+    }
+    return (
+      <S.buttonRotate rotate={rotate} onClick={handleClick}>
+        +
+      </S.buttonRotate>
+    );
+  };
+  
 
   function textOnkeyup(e) {
     setText(e.target.value);
   }
 
   const nextId = useRef(1);
-  const deleteBtn = useRef();
 
   function onCreate() {
-    if (text !== "") {
-      const data = {
-        id: nextId.current,
-        contents: text,
-        checked: false,
-      };
-      console.log(data);
-      setDatum([...datum, data]);
-      setText("");
-      nextId.current += 1;
-    }
+    
   }
 
   return (
@@ -55,12 +59,7 @@ export default function TodoListTemplate() {
                   key={item.id}
                 />
                 <img className="fix" src={fixImg} alt="" />
-                <img
-                  className="delete"
-                  src={binImg}
-                  alt=""
-                  ref={deleteBtn}
-                />
+                <img className="delete" src={binImg} alt="" />
               </span>
             </>
           ))}
@@ -72,8 +71,10 @@ export default function TodoListTemplate() {
           onChange={textOnkeyup}
           placeholder="할 일을 입력하세요."
         />
-        <Addbtn onClick={onCreate}>
-          +
+        <Addbtn>
+          <span className="plus" onClick={onCreate}>
+            +
+          </span>
         </Addbtn>
       </S.Add>
     </>

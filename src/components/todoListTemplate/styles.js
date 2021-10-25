@@ -29,24 +29,26 @@ export const Add = styled.div`
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
-  & .itemAdd {
+  input {
+    position: absolute;
+  }
+  .plus {
+    background-color: black;
   }
 `;
 
-export const IconButtonWrapper = styled.div`
+export const buttonRotate = styled.div`
   transform: rotate(0deg);
   overflow: hidden;
-  transition: all 0.3s ease-out;
+  transition: all 0.5s ease-out;
   ${({ rotate }) => rotate && `transform: rotate(315deg)`};
-  
+  border: black 1px solid;
   width: 50px;
   height: 50px;
   font-size: 40px;
   font-weight: 1000;
-  border-radius: 24px;
+  border-radius: 30px;
   background: white;
-  span {
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  justify-content: center;
 `;
