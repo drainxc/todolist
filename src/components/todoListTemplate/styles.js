@@ -16,7 +16,7 @@ export const MainDiv = styled.div`
     display: inline-flex;
     align-items: center;
   }
-  
+
   & img {
     display: flex;
     width: 15px;
@@ -25,29 +25,28 @@ export const MainDiv = styled.div`
   }
 `;
 
-const rotation = keyframes`
-  0%{
-    transform: rotate(0deg)
-  }
-  100%{
-    transform: rotate(315deg)
-  }
-`;
-
 export const Add = styled.div`
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
   & .itemAdd {
+  }
+`;
+
+export const IconButtonWrapper = styled.div`
+  transform: rotate(0deg);
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+  ${({ rotate }) => rotate && `transform: rotate(315deg)`};
+  
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  font-weight: 1000;
+  border-radius: 24px;
+  background: white;
+  span {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    font-size: 50px;
-    font-weight: 300;
-    border-radius: 24px;
-    background: white;
-    animation: ${rotation} 2s;
   }
 `;

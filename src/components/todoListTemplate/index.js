@@ -5,6 +5,17 @@ import * as S from "./styles";
 import fixImg from "../../asset/pen.png";
 import binImg from "../../asset/bin.png";
 
+const Addbtn = () => {
+  const [rotate, setRotate] = useState(false);
+
+  const handleClick = () => setRotate((prevState) => (!prevState ));
+  return (
+    <S.IconButtonWrapper rotate={rotate} onClick={handleClick}>
+      <span>+</span>
+    </S.IconButtonWrapper>
+  );
+};
+
 export default function TodoListTemplate() {
   const [text, setText] = useState("");
   const [datum, setDatum] = useState([]);
@@ -30,9 +41,6 @@ export default function TodoListTemplate() {
     }
   }
 
-  function onDelete() {
-  }
-
   return (
     <>
       <S.MainDiv>
@@ -48,7 +56,6 @@ export default function TodoListTemplate() {
                 />
                 <img className="fix" src={fixImg} alt="" />
                 <img
-                  onClick={onDelete}
                   className="delete"
                   src={binImg}
                   alt=""
@@ -65,9 +72,9 @@ export default function TodoListTemplate() {
           onChange={textOnkeyup}
           placeholder="할 일을 입력하세요."
         />
-        <button className="itemAdd" onClick={onCreate}>
+        <Addbtn onClick={onCreate}>
           +
-        </button>
+        </Addbtn>
       </S.Add>
     </>
   );
