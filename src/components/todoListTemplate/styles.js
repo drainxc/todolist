@@ -36,6 +36,7 @@ export const Add = styled.div`
     right: 50px;
     border: black 1px solid;
     resize: none;
+    opacity: 0;
   }
   .plus {
     background-color: black;

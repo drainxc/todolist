@@ -8,6 +8,7 @@ import binImg from "../../asset/bin.png";
 export default function TodoListTemplate() {
   const [text, setText] = useState("");
   const [datum, setDatum] = useState([]);
+  const itemInput = useRef();
 
   const Addbtn = () => {
     const [rotate, setRotate] = useState(false);
@@ -16,6 +17,8 @@ export default function TodoListTemplate() {
     function handleClick() {
       setRotate((prevState) => !prevState);
       setMove((prevState) => !prevState);
+      if (!rotate) itemInput.current.style = "opacity: 1;";
+      else itemInput.current.style = "opacity: 0;";
     }
     return (
       <S.buttonRotate rotate={rotate} move={move} onClick={handleClick}>
@@ -72,6 +75,7 @@ export default function TodoListTemplate() {
           onChange={textOnkeyup}
           onKeyPress={keyPressEvent}
           placeholder="할 일을 입력하세요."
+          ref={itemInput}
         />
         <Addbtn />
       </S.Add>
