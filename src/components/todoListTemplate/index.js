@@ -11,10 +11,11 @@ export default function TodoListTemplate() {
 
   const Addbtn = () => {
     const [rotate, setRotate] = useState(false);
+    const [move, setMove] = useState(false);
   
     function handleClick() {
       setRotate((prevState) => !prevState);
-      console.log("asdf");
+      setMove((prevState) => !prevState);
       if (text !== "") {
         const data = {
           id: nextId.current,
@@ -28,7 +29,7 @@ export default function TodoListTemplate() {
       }
     }
     return (
-      <S.buttonRotate rotate={rotate} onClick={handleClick}>
+      <S.buttonRotate rotate={rotate} move={move} onClick={handleClick}>
         +
       </S.buttonRotate>
     );
@@ -71,11 +72,7 @@ export default function TodoListTemplate() {
           onChange={textOnkeyup}
           placeholder="할 일을 입력하세요."
         />
-        <Addbtn>
-          <span className="plus" onClick={onCreate}>
-            +
-          </span>
-        </Addbtn>
+        <Addbtn />
       </S.Add>
     </>
   );

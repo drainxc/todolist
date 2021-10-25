@@ -28,9 +28,12 @@ export const MainDiv = styled.div`
 export const Add = styled.div`
   position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(150%, -50%);
   input {
     position: absolute;
+    width: 150px;
+    right: 50px;
+    border: black 1px solid;
   }
   .plus {
     background-color: black;
@@ -38,10 +41,10 @@ export const Add = styled.div`
 `;
 
 export const buttonRotate = styled.div`
-  transform: rotate(0deg);
   overflow: hidden;
   transition: all 0.5s ease-out;
-  ${({ rotate }) => rotate && `transform: rotate(315deg)`};
+  ${() => `transform: translateX(-100px)`};
+  ${({ rotate }) => rotate && `transform: rotate(-315deg)`};
   border: black 1px solid;
   width: 50px;
   height: 50px;
