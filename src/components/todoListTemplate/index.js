@@ -12,11 +12,25 @@ export default function TodoListTemplate() {
   const Addbtn = () => {
     const [rotate, setRotate] = useState(false);
     const [move, setMove] = useState(false);
-  
+
     function handleClick() {
       setRotate((prevState) => !prevState);
       setMove((prevState) => !prevState);
-      if (text !== "") {
+    }
+    return (
+      <S.buttonRotate rotate={rotate} move={move} onClick={handleClick}>
+        +
+      </S.buttonRotate>
+    );
+  };
+
+  function textOnkeyup(e) {
+    setText(e.target.value);
+  }
+
+  function keyPressEvent(e) {
+    if (text !== "") {
+      if (e.key === "Enter") {
         const data = {
           id: nextId.current,
           contents: text,
@@ -28,23 +42,9 @@ export default function TodoListTemplate() {
         nextId.current += 1;
       }
     }
-    return (
-      <S.buttonRotate rotate={rotate} move={move} onClick={handleClick}>
-        +
-      </S.buttonRotate>
-    );
-  };
-  
-
-  function textOnkeyup(e) {
-    setText(e.target.value);
   }
 
   const nextId = useRef(1);
-
-  function onCreate() {
-    
-  }
 
   return (
     <>
@@ -67,9 +67,10 @@ export default function TodoListTemplate() {
         </div>
       </S.MainDiv>
       <S.Add>
-        <input
+        <textarea
           value={text}
           onChange={textOnkeyup}
+          onKeyPress={keyPressEvent}
           placeholder="할 일을 입력하세요."
         />
         <Addbtn />

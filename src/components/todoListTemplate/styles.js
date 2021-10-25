@@ -29,11 +29,13 @@ export const Add = styled.div`
   position: absolute;
   left: 50%;
   transform: translate(150%, -50%);
-  input {
+  textarea {
     position: absolute;
     width: 150px;
+    height: 15px;
     right: 50px;
     border: black 1px solid;
+    resize: none;
   }
   .plus {
     background-color: black;
@@ -45,6 +47,7 @@ export const buttonRotate = styled.div`
   transition: all 0.5s ease-out;
   ${() => `transform: translateX(-100px)`};
   ${({ rotate }) => rotate && `transform: rotate(-315deg)`};
+  animation-fill-mode: forwards;
   border: black 1px solid;
   width: 50px;
   height: 50px;
