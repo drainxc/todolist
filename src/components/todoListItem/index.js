@@ -5,7 +5,9 @@ export default function TodoListItem({ contents, checked, key }) {
   return (
     <S.List>
         <span className="bullet">•</span>
-        <span className="contents">{contents}</span>
+        <div className="contents">{contents}
+        <div className="label">{contents}</div>
+        </div>
       <input type="checkbox" defaultChecked={checked}/>
     </S.List>
   );

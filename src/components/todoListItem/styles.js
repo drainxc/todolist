@@ -18,6 +18,23 @@ export const List = styled.div`
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .contents .label {
+    visibility: hidden;
+    background: whitesmoke;
+    width: 200px;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    left: 15%;
+    bottom: 5%;
+    z-index: 1;
+    word-break: break-all;
+  }
+  .contents:hover .label {
+    visibility: visible;
+  }
   input[type="checkbox"] {
     width: 20px;
     height: 20px;
