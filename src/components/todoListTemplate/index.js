@@ -4,38 +4,19 @@ import TodoListItem from "../todoListItem";
 import * as S from "./styles";
 import fixImg from "../../asset/pen.png";
 import binImg from "../../asset/bin.png";
+import AddBtn from "./addBtn";
 
 export default function TodoListTemplate() {
   const [text, setText] = useState("");
   const [datum, setDatum] = useState([]);
   const itemInput = useRef();
 
-  const Addbtn = () => {
-    const [rotate, setRotate] = useState(false);
-    const [move, setMove] = useState(false);
-
-    function handleClick() {
-      setRotate((prevState) => !prevState);
-      setMove((prevState) => !prevState);
-      if (!rotate && !move) {
-        itemInput.current.style = "opacity: 1; display: inline";
-        itemInput.current.focus();
-      } else {
-        itemInput.current.style = "opacity: 0; display: none";
-      }
-    }
-    return (
-      <S.buttonRotate rotate={rotate} move={move} onClick={handleClick}>
-        +
-      </S.buttonRotate>
-    );
-  };
-
   function textOnkeyup(e) {
     setText(e.target.value);
   }
 
   function keyPressEvent(e) {
+    setText(e.target.value);
     if (text !== "") {
       if (e.key === "Enter") {
         const data = {
@@ -49,6 +30,10 @@ export default function TodoListTemplate() {
         nextId.current += 1;
       }
     }
+  }
+
+  function handleClick() {
+    itemInput.current.style = "opacity = 1"
   }
 
   const nextId = useRef(1);
@@ -84,7 +69,9 @@ export default function TodoListTemplate() {
           placeholder="할 일을 입력하세요."
           ref={itemInput}
         />
-        <Addbtn />
+        <div onClick={handleClick}>
+          <AddBtn />
+        </div>
       </S.Add>
     </>
   );
