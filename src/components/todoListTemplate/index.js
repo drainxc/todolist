@@ -9,8 +9,8 @@ import AddBtn from "./addBtn";
 export default function TodoListTemplate() {
   const [text, setText] = useState("");
   const [datum, setDatum] = useState([]);
+  const [opacity, setOpacity] = useState(true);
   const itemInput = useRef();
-
   function textOnkeyup(e) {
     setText(e.target.value);
   }
@@ -33,7 +33,14 @@ export default function TodoListTemplate() {
   }
 
   function handleClick() {
-    itemInput.current.style = "opacity = 1"
+    setOpacity(!opacity)
+    console.log(opacity)
+    if (opacity) {
+      itemInput.current.style = "opacity: 1;";
+    }
+    else {
+      itemInput.current.style = "opacity: 0;";
+    }
   }
 
   const nextId = useRef(1);
@@ -61,8 +68,6 @@ export default function TodoListTemplate() {
       <S.Add>
         <textarea
           type="text"
-          id="textBox"
-          // readOnly={read}
           value={text}
           onChange={textOnkeyup}
           onKeyPress={keyPressEvent}
