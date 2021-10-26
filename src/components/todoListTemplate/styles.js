@@ -36,8 +36,14 @@ export const Add = styled.div`
     right: 50px;
     border: black 1px solid;
     resize: none;
+    transition: all 0.5s ease-out;
     opacity: 0;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
+  textarea::-webkit-scrollbar {
+    display: none;
+}
   .plus {
     background-color: black;
   }

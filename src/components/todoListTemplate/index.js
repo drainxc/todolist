@@ -17,7 +17,7 @@ export default function TodoListTemplate() {
     function handleClick() {
       setRotate((prevState) => !prevState);
       setMove((prevState) => !prevState);
-      if (!rotate) itemInput.current.style = "opacity: 1;";
+      if (!rotate && !move) itemInput.current.style = "opacity: 1;";
       else itemInput.current.style = "opacity: 0;";
     }
     return (
