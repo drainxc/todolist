@@ -11,24 +11,28 @@ export const List = styled.div`
     font-size: 20px;
     margin-right: 10px;
   }
+  
   .contents {
-    display: inline-block;
     width: 280px;
-    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+    line-height: 20px;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 15px;
+    padding-top: 10px;
   }
   .contents .label {
     visibility: hidden;
     background: whitesmoke;
-    width: 200px;
     color: black;
     text-align: center;
     border-radius: 6px;
-    padding: 5px;
+    padding: 10px;
     position: absolute;
-    left: 15%;
-    bottom: 5%;
+    bottom: 10%;
     z-index: 1;
     word-break: break-all;
   }
