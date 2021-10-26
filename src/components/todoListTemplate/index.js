@@ -17,8 +17,12 @@ export default function TodoListTemplate() {
     function handleClick() {
       setRotate((prevState) => !prevState);
       setMove((prevState) => !prevState);
-      if (!rotate && !move) itemInput.current.style = "opacity: 1;";
-      else itemInput.current.style = "opacity: 0;";
+      if (!rotate && !move) {
+        itemInput.current.style = "opacity: 1; display: inline";
+        itemInput.current.focus();
+      } else {
+        itemInput.current.style = "opacity: 0; display: none";
+      }
     }
     return (
       <S.buttonRotate rotate={rotate} move={move} onClick={handleClick}>
@@ -71,6 +75,9 @@ export default function TodoListTemplate() {
       </S.MainDiv>
       <S.Add>
         <textarea
+          type="text"
+          id="textBox"
+          // readOnly={read}
           value={text}
           onChange={textOnkeyup}
           onKeyPress={keyPressEvent}
