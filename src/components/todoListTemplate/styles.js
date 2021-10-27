@@ -10,7 +10,12 @@ export const MainDiv = styled.div`
   box-shadow: 0 0 4px #ffffff, 0 0 7px #ffffff, 0 0 20px #e8b4ff;
   .list {
     overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     height: 425px;
+  }
+  .list::-webkit-scrollbar {
+    display: none;
   }
 
   .item {
@@ -30,7 +35,7 @@ export const Add = styled.div`
   position: absolute;
   left: 50%;
   transform: translate(150%, -50%);
-  textarea {
+  input {
     position: absolute;
     width: 150px;
     height: 15px;
@@ -42,9 +47,9 @@ export const Add = styled.div`
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  textarea::-webkit-scrollbar {
+  input::-webkit-scrollbar {
     display: none;
-}
+  }
   .plus {
     background-color: black;
   }
