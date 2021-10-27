@@ -3,8 +3,10 @@ import Header from "../todoListHeader";
 import TodoListItem from "../todoListItem";
 import * as S from "./styles";
 import fixImg from "../../asset/pen.png";
-import binImg from "../../asset/bin.png";
 import AddBtn from "./addBtn";
+import DeleteBtn from "./List";
+import List from "./List";
+
 
 export default function TodoListTemplate() {
   const [text, setText] = useState("");
@@ -32,6 +34,10 @@ export default function TodoListTemplate() {
     }
   }
 
+  const onRemove = id => {
+    setDatum(datum.filter(data => data.id !== id));
+  }
+
   function handleClick() {
     setOpacity(!opacity);
     if (opacity) {
@@ -48,21 +54,7 @@ export default function TodoListTemplate() {
     <>
       <S.MainDiv>
         <Header />
-        <div className="list">
-          {datum.map((item) => (
-            <>
-              <span className="item">
-                <TodoListItem
-                  contents={item.contents}
-                  checked={item.checked}
-                  key={item.id}
-                />
-                <img className="fix" src={fixImg} alt="" />
-                <img className="delete" src={binImg} alt="" />
-              </span>
-            </>
-          ))}
-        </div>
+        <List datum={datum} onRemove={onRemove}/>
       </S.MainDiv>
       <S.Add>
         <input
