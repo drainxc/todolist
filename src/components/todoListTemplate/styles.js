@@ -10,6 +10,7 @@ export const MainDiv = styled.div`
   box-shadow: 0 0 4px #ffffff, 0 0 7px #ffffff, 0 0 20px #e8b4ff;
   .list {
     overflow-y: scroll;
+    height: 425px;
   }
 
   .item {
