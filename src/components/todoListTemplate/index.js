@@ -15,7 +15,7 @@ export default function TodoListTemplate() {
     setText(e.target.value);
   }
 
-  function keyPressEvent(e) {
+  function keyPressEvent(e) {  
     setText(e.target.value);
     if (text !== "") {
       if (e.key === "Enter") {
@@ -33,10 +33,10 @@ export default function TodoListTemplate() {
   }
 
   function handleClick() {
-    setOpacity(!opacity)
+    setOpacity(!opacity);
     if (opacity) {
       itemInput.current.style = "opacity: 1;";
-    }
+    } 
     else {
       itemInput.current.style = "opacity: 0;";
     }
@@ -65,7 +65,8 @@ export default function TodoListTemplate() {
         </div>
       </S.MainDiv>
       <S.Add>
-        <textarea maxLength="30"
+        <input
+          maxLength="30"
           type="text"
           value={text}
           onChange={textOnkeyup}
