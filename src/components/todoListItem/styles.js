@@ -11,7 +11,7 @@ export const List = styled.div`
     font-size: 20px;
     margin-right: 10px;
   }
-  
+
   .contents {
     width: 280px;
     display: -webkit-box;
@@ -24,20 +24,30 @@ export const List = styled.div`
     font-size: 15px;
     padding-top: 10px;
   }
-  .contents .label {
+  .contents .tooltip {
     visibility: hidden;
-    background: whitesmoke;
-    color: black;
+    background-color: black;
+    padding: 5px 10px;
+    color: white;
     text-align: center;
-    border-radius: 6px;
-    padding: 10px;
     position: absolute;
-    bottom: 10%;
-    z-index: 1;
-    word-break: break-all;
+    z-index: 2;
+    left: 100px;
+    font-size: 13px;
+    bottom: 15px;
+    justify-content: center;
   }
-  .contents:hover .label {
+  .contents:hover .tooltip {
     visibility: visible;
+  }
+  .contents .tooltip::after {
+    content: "";
+    position: absolute;
+    border-width: 10px;
+    top: 0%;
+    left: -10px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
   }
   input[type="checkbox"] {
     width: 20px;

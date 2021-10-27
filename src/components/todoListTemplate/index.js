@@ -34,7 +34,6 @@ export default function TodoListTemplate() {
 
   function handleClick() {
     setOpacity(!opacity)
-    console.log(opacity)
     if (opacity) {
       itemInput.current.style = "opacity: 1;";
     }
@@ -66,7 +65,7 @@ export default function TodoListTemplate() {
         </div>
       </S.MainDiv>
       <S.Add>
-        <textarea
+        <textarea maxLength="30"
           type="text"
           value={text}
           onChange={textOnkeyup}
