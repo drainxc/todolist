@@ -9,17 +9,17 @@ import styled from "styled-components";
 
 export const HeaderDiv = styled.div`
   width: 100%;
-  height: 90px;
+  padding: 5.6% 0;
   .day {
     color: gray;
-    padding: 5% 5% 0;
+    padding: 0 5%;
   }
   .top {
-    margin-top: 5px;
     display: flex;
     justify-content: space-between;
     padding: 0 5%;
     span {
+      /* padding: 0 2.5%; */
       font-size: 30px;
       font-weight: 1000;
     }
