@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-// export const a = styled.div`
-//   padding: 5px;
-// `;
-
-// export const b = styled(a)``
-
-
 export const HeaderDiv = styled.div`
   width: 100%;
   padding: 5.6% 0;
@@ -19,7 +12,6 @@ export const HeaderDiv = styled.div`
     justify-content: space-between;
     padding: 0 5%;
     span {
-      /* padding: 0 2.5%; */
       font-size: 30px;
       font-weight: 1000;
     }

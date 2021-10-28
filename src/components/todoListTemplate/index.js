@@ -1,10 +1,7 @@
 import React, { useState, useRef } from "react";
 import Header from "../todoListHeader";
-import TodoListItem from "../todoListItem";
 import * as S from "./styles";
-import fixImg from "../../asset/pen.png";
 import AddBtn from "./addBtn";
-import DeleteBtn from "./List";
 import List from "./List";
 
 
