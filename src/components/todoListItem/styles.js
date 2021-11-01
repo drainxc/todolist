@@ -24,7 +24,7 @@ export const List = styled.div`
     font-size: 15px;
     padding-top: 10px;
   }
-  .contents .tooltip {
+  .tooltip {
     visibility: hidden;
     background-color: black;
     padding: 5px 10px;

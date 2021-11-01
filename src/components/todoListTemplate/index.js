@@ -8,6 +8,7 @@ export default function TodoListTemplate() {
   const [text, setText] = useState("");
   const [datum, setDatum] = useState([]);
   const [opacity, setOpacity] = useState(true);
+  const [input, setInput] = useState(false);
   const itemInput = useRef();
   function textOnkeyup(e) {
     setText(e.target.value);
@@ -15,18 +16,16 @@ export default function TodoListTemplate() {
 
   function keyPressEvent(e) {
     setText(e.target.value);
-    if (text !== "") {
-      if (e.key === "Enter") {
-        const data = {
-          id: nextId.current,
-          contents: text,
-          checked: false,
-        };
-        console.log(data);
-        setDatum([...datum, data]);
-        setText("");
-        nextId.current += 1;
-      }
+    if (e.key === "Enter" && text !== "" && input) {
+      const data = {
+        id: nextId.current,
+        contents: text,
+        checked: false,
+      };
+      console.log(data);
+      setDatum([...datum, data]);
+      setText("");
+      nextId.current += 1;
     }
   }
 
@@ -41,6 +40,8 @@ export default function TodoListTemplate() {
     } else {
       itemInput.current.style = "opacity: 0;";
     }
+    setText("");
+    setInput(!input);
   }
 
   const nextId = useRef(1);
