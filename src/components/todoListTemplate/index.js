@@ -12,6 +12,9 @@ export default function TodoListTemplate() {
   const itemInput = useRef();
   function textOnkeyup(e) {
     setText(e.target.value);
+    if (text === "" && e.target.value === " ") {
+      setText("");
+    }
   }
 
   function keyPressEvent(e) {
