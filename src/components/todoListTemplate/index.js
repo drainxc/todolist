@@ -4,7 +4,6 @@ import * as S from "./styles";
 import AddBtn from "./addBtn";
 import List from "./List";
 
-
 export default function TodoListTemplate() {
   const [text, setText] = useState("");
   const [datum, setDatum] = useState([]);
@@ -14,7 +13,7 @@ export default function TodoListTemplate() {
     setText(e.target.value);
   }
 
-  function keyPressEvent(e) {  
+  function keyPressEvent(e) {
     setText(e.target.value);
     if (text !== "") {
       if (e.key === "Enter") {
@@ -31,16 +30,15 @@ export default function TodoListTemplate() {
     }
   }
 
-  const onRemove = id => {
-    setDatum(datum.filter(data => data.id !== id));
-  }
+  const onRemove = (id) => {
+    setDatum(datum.filter((data) => data.id !== id));
+  };
 
   function handleClick() {
     setOpacity(!opacity);
     if (opacity) {
       itemInput.current.style = "opacity: 1;";
-    } 
-    else {
+    } else {
       itemInput.current.style = "opacity: 0;";
     }
   }
@@ -51,7 +49,9 @@ export default function TodoListTemplate() {
     <>
       <S.MainDiv>
         <Header />
-        <List datum={datum} onRemove={onRemove}/>
+        <span className="list">
+          <List datum={datum} onRemove={onRemove} />
+        </span>
       </S.MainDiv>
       <S.Add>
         <input
