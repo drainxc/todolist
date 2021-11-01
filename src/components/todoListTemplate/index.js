@@ -15,7 +15,6 @@ export default function TodoListTemplate() {
   }
 
   function keyPressEvent(e) {
-    setText(e.target.value);
     if (e.key === "Enter" && text !== "" && input) {
       const data = {
         id: nextId.current,
