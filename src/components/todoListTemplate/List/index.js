@@ -4,35 +4,30 @@ import fixImg from "../../../asset/pen.png";
 import * as S from "./style";
 import TodoListItem from "../../todoListItem";
 
-function DeleteBtn({ data, onRemove }) {
-  console.log(data)
+function List({ data, onRemove }) {
   return (
     <>
-      <S.Button>
-        <img onClick={() => onRemove(data.id)} src={binImg} alt="" />
-      </S.Button>
+      <span className="item">
+        <TodoListItem
+          contents={data.contents}
+          checked={data.checked}
+          key={data.id}
+        />
+        <img className="fix" src={fixImg} alt="" />
+        <S.Button>
+          <img onClick={() => onRemove(data.id)} src={binImg} alt="" />
+        </S.Button>
+      </span>
     </>
   );
 }
 
-export default function List({ datum, onRemove }) {
+export default function itemList({ datum, onRemove }) {
   return (
     <>
-      <div className="list">
-        {datum.map((data) => (
-          <>
-            <span className="item">
-              <TodoListItem
-                contents={data.contents}
-                checked={data.checked}
-                key={data.id}
-              />
-              <img className="fix" src={fixImg} alt="" />
-              <DeleteBtn data={data} key={data.id} onRemove={onRemove} />
-            </span>
-          </>
-        ))}
-      </div>
+      {datum.map((data) => (
+        <List data={data} key={data.id} onRemove={onRemove} />
+      ))}
     </>
   );
 }
