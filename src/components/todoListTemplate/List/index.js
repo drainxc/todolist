@@ -13,17 +13,13 @@ function List({ data, onRemove }) {
 
   return (
     <>
-      <span className="item">
-        <TodoListItem
-          data={data}
-          fix={fix}
-          setFix={setFix}
-        />
-        <img className="fix" src={fixImg} alt="" onClick={onFix}/>
-        <S.Button>
+      <S.ListDiv>
+        <span className="item">
+          <TodoListItem data={data} fix={fix} setFix={setFix} />
+          <img src={fixImg} alt="" onClick={onFix} />
           <img onClick={() => onRemove(data.id)} src={binImg} alt="" />
-        </S.Button>
-      </span>
+        </span>
+      </S.ListDiv>
     </>
   );
 }
