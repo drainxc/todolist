@@ -2,8 +2,8 @@ import React from "react";
 import { useState } from "react/cjs/react.development";
 import * as S from "./styles";
 
-export default function TodoListItem({ contents, checked, fix, setFix }) {
-  const [text, setText] = useState(contents)
+export default function TodoListItem({ data, fix, setFix }) {
+  const [text, setText] = useState(data.contents)
 
   function textOnkeyup(e) {
     setText(e.target.value);
@@ -11,6 +11,7 @@ export default function TodoListItem({ contents, checked, fix, setFix }) {
 
   function keyPressEvent(e) {
     if (e.key === "Enter") {
+      data.contents = text;
       setFix(false);
     }
   }
@@ -22,7 +23,7 @@ export default function TodoListItem({ contents, checked, fix, setFix }) {
         <span className="contents">{text}
         <div className="tooltip">{text}</div>
         </span>}
-      <input type="checkbox" defaultChecked={checked}/>
+      <input type="checkbox" defaultChecked={data.checked}/>
     </S.List>
   );
 }

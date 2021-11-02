@@ -24,7 +24,7 @@ export default function TodoListTemplate() {
         contents: text,
         checked: false,
       };
-      console.log(data);
+      console.log(datum);
       setDatum([...datum, data]);
       setText("");
       nextId.current += 1;

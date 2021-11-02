@@ -15,8 +15,9 @@ function List({ data, onRemove }) {
     <>
       <span className="item">
         <TodoListItem
-          contents={data.contents}
-          checked={data.checked}
+          // contents={data.contents}
+          // checked={data.checked}
+          data={data}
           fix={fix}
           setFix={setFix}
         />
