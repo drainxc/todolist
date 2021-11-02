@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Button = styled.button`
+export const ListDiv = styled.span`
+  img {
+    cursor: pointer;
     border: none;
     background-color: white;
     width: 14px;
@@ -9,4 +11,5 @@ export const Button = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-`
+  }
+`;
