@@ -19,7 +19,7 @@ export default function TodoListItem({ data, fix, setFix }) {
   return (
     <S.List>
         <span className="bullet">•</span>
-        {fix ? <input value={text} onKeyPress={keyPressEvent} onChange={textOnkeyup}/> : 
+        {fix ? <input className="contents" value={text} onKeyPress={keyPressEvent} onChange={textOnkeyup}/> : 
         <span className="contents">{text}
         <div className="tooltip">{text}</div>
         </span>}

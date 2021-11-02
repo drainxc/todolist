@@ -11,7 +11,6 @@ export const List = styled.div`
     font-size: 20px;
     margin-right: 10px;
   }
-
   .contents {
     width: 280px;
     display: -webkit-box;
