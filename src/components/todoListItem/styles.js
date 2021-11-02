@@ -31,7 +31,7 @@ export const List = styled.div`
     color: white;
     text-align: center;
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     left: 100px;
     font-size: 13px;
     bottom: 15px;

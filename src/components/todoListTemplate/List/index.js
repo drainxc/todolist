@@ -18,6 +18,7 @@ function List({ data, onRemove }) {
           contents={data.contents}
           checked={data.checked}
           fix={fix}
+          setFix={setFix}
         />
         <img className="fix" src={fixImg} alt="" onClick={onFix}/>
         <S.Button>
