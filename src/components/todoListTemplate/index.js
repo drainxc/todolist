@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Header from "../todoListHeader";
 import * as S from "./styles";
 import AddBtn from "./addBtn";
@@ -6,10 +6,15 @@ import List from "./List";
 
 export default function TodoListTemplate() {
   const [text, setText] = useState("");
-  const [datum, setDatum] = useState([]);
+  const [datum, setDatum] = useState(() => JSON.parse(window.localStorage.getItem("datum")) || []);
   const [opacity, setOpacity] = useState(true);
   const [input, setInput] = useState(false);
   const itemInput = useRef();
+
+  useEffect(() => {
+    window.localStorage.setItem("datum", JSON.stringify(datum));
+  }, [datum])
+
   function textOnkeyup(e) {
     setText(e.target.value);
     if (text === "" && e.target.value === " ") {
@@ -24,8 +29,8 @@ export default function TodoListTemplate() {
         contents: text,
         checked: false,
       };
-      console.log(datum);
       setDatum([...datum, data]);
+      console.log(datum);
       setText("");
       nextId.current += 1;
     }
@@ -66,6 +71,7 @@ export default function TodoListTemplate() {
           placeholder="할 일을 입력하세요."
           ref={itemInput}
         />
+
         <div onClick={handleClick}>
           <AddBtn />
         </div>

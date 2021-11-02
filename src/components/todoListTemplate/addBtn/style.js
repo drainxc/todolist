@@ -1,10 +1,9 @@
 import styled from "styled-components";
 
-export const buttonRotate = styled.div`
+export const ButtonRotate = styled.div`
   overflow: hidden;
   transition: all 0.5s ease-out;
-  ${() => `transform: translateX(-100px)`};
-  ${({ rotate }) => rotate && `transform: rotate(-585deg)`};
+  transform: translateX(-100px);
   border: black 1px solid;
   width: 50px;
   height: 50px;
